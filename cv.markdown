@@ -2,10 +2,18 @@
 layout: page
 title: CV
 permalink: /cv/
+nav_order: 3
 ---
+# Academic Appointments
+**2022 - now:** Postdoc Researcher 
+Max Planck Institute for Dynamics and Self-Organization (MPI-DS), Germany
+Supervisor: *Dr. David Zwicker*
+
+---
+
 # Education
 
-**2018 – 2022:** PhD in Applied Physics (Cum Laude)  
+**2018 – 2023:** PhD in Applied Physics (Cum Laude)  
 Eindhoven University of Technology (TU/e), Netherlands  
 Supervisors: *Prof. Liesbeth M. C. Janssen, Prof. Cornelis Storm*
 

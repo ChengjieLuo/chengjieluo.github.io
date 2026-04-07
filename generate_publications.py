@@ -1,0 +1,155 @@
+import bibtexparser
+import re
+
+# LaTeX special character mapping
+LATEX_TO_UNICODE = {
+    r"\'e": "é",
+    r"\'a": "á",
+    r"\'i": "í",
+    r"\'o": "ó",
+    r"\'u": "ú",
+    r"\'E": "É",
+    r'\"o': "ö",
+    r'\"u': "ü",
+    r'\"a': "ä",
+    r'\"O': "Ö",
+    r'\"U': "Ü",
+    r'\"A': "Ä",
+    r'\`a': "à",
+    r'\`e': "è",
+    r'\`i': "ì",
+    r'\`o': "ò",
+    r'\`u': "ù",
+    r'\~n': "ñ",
+    r'\~N': "Ñ",
+    r'\c{c}': "ç",
+    r'\c{C}': "Ç",
+    r'\ss': "ß",
+    r'\aa': "å",
+    r'\AA': "Å",
+    r'\o': "ø",
+    r'\O': "Ø",
+}
+
+def latex_to_unicode(text):
+    """Convert LaTeX special characters to Unicode."""
+    # Handle patterns like {\'e}, {\"o}, {\`a}, etc.
+    text = re.sub(r"\{\\(['\"`~^])(\w)\}", lambda m: LATEX_TO_UNICODE.get(f"\\{m.group(1)}{m.group(2)}", m.group(0)), text)
+    # Handle patterns like {\ss}, {\aa}, etc.
+    text = re.sub(r"\{\\(\w+)\}", lambda m: LATEX_TO_UNICODE.get(f"\\{m.group(1)}", m.group(0)), text)
+    # Handle patterns like \'{e}, \"{o}, etc. (without outer braces)
+    text = re.sub(r"\\(['\"`~^])(\w)", lambda m: LATEX_TO_UNICODE.get(f"\\{m.group(1)}{m.group(2)}", m.group(0)), text)
+    # Remove any remaining curly braces
+    text = text.replace('{', '').replace('}', '')
+    return text
+
+# Load the .bib file
+with open('/Users/chengjie/Documents/Goettingen/projects/homepage/chengjieluo.github.io/_bibliography/references.bib') as bibtex_file:
+    bib_database = bibtexparser.load(bibtex_file)
+
+# Sort entries by year (descending)
+sorted_entries = sorted(bib_database.entries, key=lambda x: x.get('year', '0'), reverse=True)
+
+# List of papers with equal contribution authors
+# 'cofirst' indicates whether the equal-contribution authors are co-first authors
+coauthor_list = [
+    {'name': 'ciarella2021multi',
+     'authors': ['Ciarella, Simone', 'Luo, Chengjie', 'Debets, Vincent E'],
+     'cofirst': True},
+    {'name': 'ruscher2021glassy',
+     'authors': ['Ciarella, Simone', 'Luo, Chengjie'],
+     'cofirst': False},  # co-second authors, not co-first
+    {'name': 'menou2023physical',
+     'authors': ['Menou, Lucas', 'Luo, Chengjie'],
+     'cofirst': True},
+    {'name': 'luo2025theory',
+     'authors': ['Luo, Chengjie', 'Hess, Nathaniel'],
+     'cofirst': True},
+]
+
+def get_equal_authors(entry_id):
+    """Return a list of equal-contribution authors for a given entry ID."""
+    for item in coauthor_list:
+        if item['name'] == entry_id:
+            return item['authors']
+    return []
+
+def is_cofirst(entry_id):
+    """Check if the equal-contribution authors are co-first authors."""
+    for item in coauthor_list:
+        if item['name'] == entry_id:
+            return item.get('cofirst', False)
+    return False
+
+def is_first_or_cofirst_author(entry):
+    """Check if Chengjie Luo is first author or co-first author."""
+    authors = entry['author'].split(' and ')
+    first_author = authors[0].strip()
+    entry_id = entry.get('ID', '')
+
+    # Check if Chengjie Luo is the first author
+    if 'Luo' in first_author and 'Chengjie' in first_author:
+        return True
+    # Check if Chengjie Luo is a co-first (equal contribution) author
+    # Only count if cofirst is True
+    equal_authors = get_equal_authors(entry_id)
+    if equal_authors and is_cofirst(entry_id):
+        if any('Luo, Chengjie' in eq for eq in equal_authors):
+            return True
+    return False
+
+def format_authors(author_string, equal_authors=None):
+    """Convert 'Last, First' to 'First Last' for each author, bold Chengjie Luo,
+    and add dagger (†) for equal-contribution authors."""
+    if equal_authors is None:
+        equal_authors = []
+    authors = author_string.split(' and ')
+    formatted = []
+    for author in authors:
+        author = author.strip()
+        original = author  # keep original "Last, First" format for matching
+        if ',' in author:
+            parts = [p.strip() for p in author.split(',', 1)]
+            name = f"{parts[1]} {parts[0]}"  # "First Last"
+        else:
+            name = author
+        # Convert LaTeX special characters to Unicode
+        name = latex_to_unicode(name)
+        # Bold Chengjie Luo
+        if 'Chengjie' in name and 'Luo' in name:
+            name = f"**{name}**"
+        # Add dagger for equal-contribution authors
+        if any(eq in original for eq in equal_authors):
+            name += "<sup>†</sup>"
+        formatted.append(name)
+
+    if len(formatted) > 1:
+        return ', '.join(formatted[:-1]) + ', and ' + formatted[-1]
+    return formatted[0]
+
+# Count (co-)first author papers
+first_author_count = sum(1 for entry in sorted_entries if is_first_or_cofirst_author(entry))
+
+# Generate Markdown
+with open('publication.markdown', 'w') as md_file:
+    md_file.write('---\nlayout: page\ntitle: Publications\npermalink: /publication/\n---\n\n')
+
+    md_file.write(f'Totally {len(sorted_entries)} papers, including {first_author_count} (co-)first author papers.\n\n')
+
+    md_file.write('<sup>†</sup>equal contribution\n\n')
+
+    for i, entry in enumerate(sorted_entries, start=1):
+        entry_id = entry.get('ID', '')
+        equal_authors = get_equal_authors(entry_id)
+        authors = format_authors(entry['author'], equal_authors)
+        title = latex_to_unicode(entry['title'])  # Also convert title
+        journal = latex_to_unicode(entry.get('journal', ''))  # Also convert journal
+        
+        volume = entry.get('volume', '')
+        pages = entry.get('pages', '')
+        year = entry.get('year', '')
+        doi = entry.get('doi', '')
+
+        line = f"{i}. {authors}. [{title}](https://doi.org/{doi}). *{journal}* {volume}, {pages} ({year})."
+        line += "\n\n"
+        md_file.write(line)

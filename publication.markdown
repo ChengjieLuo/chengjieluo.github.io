@@ -2,5 +2,54 @@
 layout: page
 title: Publications
 permalink: /publication/
+nav_order: 4
 ---
+
+Totally 22 papers, including 10 (co-)first author papers.
+
+<sup>†</sup>equal contribution
+
+1. Yicheng Qiang, **Chengjie Luo**, and David Zwicker. [Self-Propulsion via Nontransitive Phase Coexistence in Chemically Active Mixtures](https://doi.org/10.1103/7n1c-2m5g). *Physical Review Letters* 135, 268301 (2025).
+
+2. **Chengjie Luo**<sup>†</sup>, Nathaniel Hess<sup>†</sup>, Dilimulati Aierken, Yicheng Qiang, Jerelle A Joseph, and David Zwicker. [Theory of condensate size control by molecular charge asymmetry](https://doi.org/10.1021/acsmacrolett.5c00342). *ACS Macro Letters* 14, 1484--1491 (2025).
+
+3. Yicheng Qiang, **Chengjie Luo**, and David Zwicker. [Scaling laws for phase coexistence in multicomponent mixtures](https://doi.org/10.1103/zcvb-9t4b). *Physical Review Research* 7, 043008 (2025).
+
+4. Jacques D. Fries, Roxanne Berthin, **Chengjie Luo**, Marie Jardat, David Zwicker, Vincent Dahirel, and Pierre Illien. [Chemically active droplets in crowded environments](https://doi.org/10.1103/6f72-xk9b). *Phys. Rev. E* 112, 064410 (2025).
+
+5. Giulia Janzen, Casper Smit, Samantha Visbeek, Vincent E Debets, **Chengjie Luo**, Cornelis Storm, Simone Ciarella, and Liesbeth MC Janssen. [Classifying the age of a glass based on structural properties: A machine learning approach](https://doi.org/10.1103/PhysRevMaterials.8.025602). *Physical Review Materials* 8, 025602 (2024).
+
+6. **Chengjie Luo**, Yicheng Qiang, and David Zwicker. [Beyond pairwise: Higher-order physical interactions affect phase separation in multicomponent liquids](https://doi.org/10.1103/PhysRevResearch.6.033002). *Physical Review Research* 6, 033002 (2024).
+
+7. Yicheng Qiang, **Chengjie Luo**, and David Zwicker. [Nonlocal elasticity yields equilibrium patterns in phase separating systems](https://doi.org/10.1103/PhysRevX.14.021009). *Physical Review X* 14, 021009 (2024).
+
+8. Huijun Zhang, **Chengjie Luo**, Zhongyu Zheng, and Yilong Han. [Effects of size ratio on particle packing in binary glasses](https://doi.org/10.1016/j.actamat.2023.118700). *Acta Materialia* 246, 118700 (2023).
+
+9. Giulia Janzen, Xander LJA Smeets, Vincent E Debets, **Chengjie Luo**, Cornelis Storm, Liesbeth MC Janssen, and Simone Ciarella. [Dead or alive: Distinguishing active from passive particles using supervised learning](https://doi.org/10.1209/0295-5075/acdf1b). *Europhysics Letters* 143, 17004 (2023).
+
+10. Ilian Pihlajamaa, Corentin CL Laudicina, **Chengjie Luo**, and Liesbeth MC Janssen. [Emergent structural correlations in dense liquids](https://doi.org/10.1093/pnasnexus/pgad184). *PNAS nexus* 2, pgad184 (2023).
+
+11. **Chengjie Luo**, and David Zwicker. [Influence of physical interactions on spatiotemporal patterns](https://doi.org/10.1103/PhysRevE.108.034206). *Physical Review E* 108, 034206 (2023).
+
+12. Lucas Menou<sup>†</sup>, **Chengjie Luo**<sup>†</sup>, and David Zwicker. [Physical interactions in non-ideal fluids promote Turing patterns](https://doi.org/10.1098/rsif.2023.0244). *Journal of the Royal Society Interface* 20,  (2023).
+
+13. Corentin CL Laudicina, **Chengjie Luo**, Kunimasa Miyazaki, and Liesbeth MC Janssen. [Dynamical susceptibilities near ideal glass transitions](https://doi.org/10.1103/PhysRevE.106.064136). *Physical Review E* 106, 064136 (2022).
+
+14. **Chengjie Luo**, Joshua F Robinson, Ilian Pihlajamaa, Vincent E Debets, C Patrick Royall, and Liesbeth MC Janssen. [Many-body correlations are non-negligible in both fragile and strong glassformers](https://doi.org/10.1103/PhysRevLett.129.145501). *Physical Review Letters* 129, 145501 (2022).
+
+15. Céline Ruscher, Simone Ciarella<sup>†</sup>, **Chengjie Luo**<sup>†</sup>, Liesbeth MC Janssen, Jean Farago, and Jörg Baschnagel. [Glassy dynamics of a binary Voronoi fluid: a mode-coupling analysis](https://doi.org/10.1088/1361-648X/abc4cc). *Journal of Physics: Condensed Matter* 33, 064001 (2021).
+
+16. Simone Ciarella<sup>†</sup>, **Chengjie Luo**<sup>†</sup>, Vincent E Debets<sup>†</sup>, and Liesbeth MC Janssen. [Multi-component generalized mode-coupling theory: predicting dynamics from structure in glassy mixtures](https://doi.org/10.1140/epje/s10189-021-00095-w). *The European Physical Journal E* 44, 91 (2021).
+
+17. **Chengjie Luo**, Vincent E Debets, and Liesbeth MC Janssen. [Tagged-particle motion of Percus--Yevick hard spheres from first principles](https://doi.org/10.1063/5.0056257). *The Journal of Chemical Physics* 155,  (2021).
+
+18. Vincent E Debets, **Chengjie Luo**, Simone Ciarella, and Liesbeth MC Janssen. [Generalized mode-coupling theory for mixtures of Brownian particles](https://doi.org/10.1103/PhysRevE.104.065302). *Physical Review E* 104, 065302 (2021).
+
+19. Yusheng Shen, **Chengjie Luo**, Yan Wen, Wei He, Pingbo Huang, Hsuan-Yi Chen, Pik-Yin Lai, and Penger Tong. [Directed motion of membrane proteins under an entropy-driven potential field generated by anchored proteins](https://doi.org/10.1103/PhysRevResearch.3.043195). *Physical Review Research* 3, 043195 (2021).
+
+20. **Chengjie Luo**, and Liesbeth MC Janssen. [Glassy dynamics of sticky hard spheres beyond the mode-coupling regime](https://doi.org/10.1039/D1SM00712B ). *Soft Matter* 17, 7645--7661 (2021).
+
+21. **Chengjie Luo**, and Liesbeth MC Janssen. [Generalized mode-coupling theory of the glass transition. I. Numerical results for Percus--Yevick hard spheres](https://doi.org/10.1063/5.0026969). *The Journal of Chemical Physics* 153, 214507 (2020).
+
+22. **Chengjie Luo**, and Liesbeth MC Janssen. [Generalized mode-coupling theory of the glass transition. II. Analytical scaling laws](https://doi.org/10.1063/5.0026979). *The Journal of Chemical Physics* 153,  (2020).
 
