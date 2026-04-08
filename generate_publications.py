@@ -98,6 +98,34 @@ def is_first_or_cofirst_author(entry):
             return True
     return False
 
+# def format_authors(author_string, equal_authors=None):
+#     """Convert 'Last, First' to 'First Last' for each author, bold Chengjie Luo,
+#     and add dagger (†) for equal-contribution authors."""
+#     if equal_authors is None:
+#         equal_authors = []
+#     authors = author_string.split(' and ')
+#     formatted = []
+#     for author in authors:
+#         author = author.strip()
+#         original = author  # keep original "Last, First" format for matching
+#         if ',' in author:
+#             parts = [p.strip() for p in author.split(',', 1)]
+#             name = f"{parts[1]} {parts[0]}"  # "First Last"
+#         else:
+#             name = author
+#         # Convert LaTeX special characters to Unicode
+#         name = latex_to_unicode(name)
+#         # Bold Chengjie Luo
+#         if 'Chengjie' in name and 'Luo' in name:
+#             name = f"**{name}**"
+#         # Add dagger for equal-contribution authors
+#         if any(eq in original for eq in equal_authors):
+#             name += "<sup>†</sup>"
+#         formatted.append(name)
+
+#     if len(formatted) > 1:
+#         return ', '.join(formatted[:-1]) + ', and ' + formatted[-1]
+#     return formatted[0]
 def format_authors(author_string, equal_authors=None):
     """Convert 'Last, First' to 'First Last' for each author, bold Chengjie Luo,
     and add dagger (†) for equal-contribution authors."""
@@ -115,18 +143,20 @@ def format_authors(author_string, equal_authors=None):
             name = author
         # Convert LaTeX special characters to Unicode
         name = latex_to_unicode(name)
-        # Bold Chengjie Luo
+        # Semi-bold Chengjie Luo (font-weight: 600 is between normal 400 and bold 700)
         if 'Chengjie' in name and 'Luo' in name:
-            name = f"**{name}**"
+            name = f'<span style="font-weight: 500;">{name}</span>'
         # Add dagger for equal-contribution authors
         if any(eq in original for eq in equal_authors):
             name += "<sup>†</sup>"
         formatted.append(name)
 
-    if len(formatted) > 1:
+    if len(formatted) > 2:
         return ', '.join(formatted[:-1]) + ', and ' + formatted[-1]
+    if len(formatted) == 2:
+        return ' and '.join(formatted)
+    
     return formatted[0]
-
 # Count (co-)first author papers
 first_author_count = sum(1 for entry in sorted_entries if is_first_or_cofirst_author(entry))
 
@@ -150,13 +180,21 @@ with open('publication.markdown', 'w') as md_file:
         year = entry.get('year', '')
         doi = entry.get('doi', '')
 
-        line = f"{i}. {authors}. [{title}](https://doi.org/{doi}). *{journal}* {volume}, {pages} ({year})."
+        # line = f"{i}. **{title}** <br> {authors} <br> [*{journal}*](https://doi.org/{doi}) {volume}, {pages} ({year})"
+
+        line = f'{i}. **{title}** <br> {authors} <br> <a href="https://doi.org/{doi}" style="color: #808080;">{journal} {volume}, {pages} ({year})</a>'
+
+        # print(journal)
+
         line += "\n\n"
+
         md_file.write(line)
 
         #### write thesis
-    phd_thesis=f'**PhD thesis**: [A First-Principles Theory of the Complex Dynamics of Glass-Forming Liquids: A Generalized Mode-Coupling Theory](https://research.tue.nl/en/publications/a-first-principles-theory-of-the-complex-dynamics-of-glass-formin/)'
+    # phd_thesis=f'**PhD thesis**: [A First-Principles Theory of the Complex Dynamics of Glass-Forming Liquids: A Generalized Mode-Coupling Theory](https://research.tue.nl/en/publications/a-first-principles-theory-of-the-complex-dynamics-of-glass-formin/)'
+    phd_thesis=f'**PhD thesis**: <a href="https://research.tue.nl/en/publications/a-first-principles-theory-of-the-complex-dynamics-of-glass-formin/" style="color: #808080;">A first-principles theory of the complex dynamics of glass-forming liquids: A generalized mode-coupling theory</a>'
     md_file.write(phd_thesis + "\n\n")
     
-    master_thesis=f'**MPhil thesis**: [Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model](https://lbezone.hkust.edu.hk/bib/991012656469603412)'
+    # master_thesis=f'**MPhil thesis**: [Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model](https://lbezone.hkust.edu.hk/bib/991012656469603412)'
+    master_thesis=f'**MPhil thesis**: <a href="https://lbezone.hkust.edu.hk/bib/991012656469603412" style="color: #808080;">Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model</a>'
     md_file.write(master_thesis + "\n\n")
