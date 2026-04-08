@@ -63,7 +63,7 @@ Cyclic-dominance reactions — such as the classic rock-paper-scissors game — 
 
 We find three qualitatively distinct regimes:
 
-**Strong repulsion** suppresses spiral waves and generates oscillating lattice patterns.
+Strong repulsion suppresses spiral waves and generates oscillating lattice patterns.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0;">
   <div style="flex: 0 0 23%; text-align: center;">
@@ -86,7 +86,7 @@ We find three qualitatively distinct regimes:
   </div>
 </div>
 
-**Strong attraction** triggers an interplay between phase separation and chemical oscillations — droplets co-localize with the cores of spiral waves.
+Strong attraction triggers an interplay between phase separation and chemical oscillations — droplets co-localize with the cores of spiral waves.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0;">
   <div style="flex: 0 0 23%; text-align: center;">
@@ -103,7 +103,7 @@ We find three qualitatively distinct regimes:
   </div>
 </div>
 
-**Weak interactions** preserve the spiral-wave morphology but modify their characteristic length and time scales.
+Weak interactions preserve the spiral-wave morphology but modify their characteristic length and time scales.
 
 These results reveal that even modest physical interactions can qualitatively alter the outcome of reaction-diffusion dynamics, pointing to a rich and largely uncharted interplay between thermodynamics and non-equilibrium chemistry.
 
