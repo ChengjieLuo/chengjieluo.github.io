@@ -4,9 +4,11 @@ title: CV
 permalink: /cv/
 nav_order: 3
 ---
+
 # Academic Appointments
-**2022 - now:** Postdoc Researcher 
-Max Planck Institute for Dynamics and Self-Organization (MPI-DS), Germany
+
+**2022 – now:** Postdoc Researcher   
+Max Planck Institute for Dynamics and Self-Organization (MPI-DS), Germany     
 Supervisor: *Dr. David Zwicker*
 
 ---

@@ -67,6 +67,13 @@ coauthor_list = [
      'cofirst': True},
 ]
 
+# List of papers with special highlights (e.g., journal covers)
+highlights = {
+    'luo2021glassy': [
+        {'text': 'cover', 'url': 'https://pubs.rsc.org/en/content/articlelanding/2021/SM/D1SM90156G'}
+    ],
+}
+
 def get_equal_authors(entry_id):
     """Return a list of equal-contribution authors for a given entry ID."""
     for item in coauthor_list:
@@ -164,6 +171,12 @@ first_author_count = sum(1 for entry in sorted_entries if is_first_or_cofirst_au
 with open('publication.markdown', 'w') as md_file:
     md_file.write('---\nlayout: page\ntitle: Publications\npermalink: /publication/\nnav_order: 4\n---\n\n')
 
+    #Float image to the upper right of the page
+    md_file.write('<div style="float: right; margin: 0 0 15px 20px; max-width: 20%;">\n')
+    md_file.write('  <img src="{{ \'/assets/images/cover_full.png\' | relative_url }}" alt="Soft Matter cover" style="width: 100%;">\n')
+    md_file.write('</div>\n\n')
+
+
     md_file.write(f'Totally {len(sorted_entries)} papers, including {first_author_count} (co-)first author papers.\n\n')
 
     md_file.write('<sup>†</sup>equal contribution\n\n')
@@ -183,6 +196,12 @@ with open('publication.markdown', 'w') as md_file:
         # line = f"{i}. **{title}** <br> {authors} <br> [*{journal}*](https://doi.org/{doi}) {volume}, {pages} ({year})"
 
         line = f'{i}. **{title}** <br> {authors} <br> <a href="https://doi.org/{doi}" style="color: #808080;">{journal} {volume}, {pages} ({year})</a>'
+
+         # Add highlights (e.g., cover links)
+        if entry_id in highlights:
+            for h in highlights[entry_id]:
+                line += f' [<a href="{h["url"]}" style="color: #cc0000;">{h["text"]}</a>]'
+
 
         # print(journal)
 
