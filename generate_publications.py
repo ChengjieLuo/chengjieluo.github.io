@@ -132,7 +132,7 @@ first_author_count = sum(1 for entry in sorted_entries if is_first_or_cofirst_au
 
 # Generate Markdown
 with open('publication.markdown', 'w') as md_file:
-    md_file.write('---\nlayout: page\ntitle: Publications\npermalink: /publication/\n---\n\n')
+    md_file.write('---\nlayout: page\ntitle: Publications\npermalink: /publication/\nnav_order: 4\n---\n\n')
 
     md_file.write(f'Totally {len(sorted_entries)} papers, including {first_author_count} (co-)first author papers.\n\n')
 
@@ -153,3 +153,10 @@ with open('publication.markdown', 'w') as md_file:
         line = f"{i}. {authors}. [{title}](https://doi.org/{doi}). *{journal}* {volume}, {pages} ({year})."
         line += "\n\n"
         md_file.write(line)
+
+        #### write thesis
+    phd_thesis=f'**PhD thesis**: [A First-Principles Theory of the Complex Dynamics of Glass-Forming Liquids: A Generalized Mode-Coupling Theory](https://research.tue.nl/en/publications/a-first-principles-theory-of-the-complex-dynamics-of-glass-formin/)'
+    md_file.write(phd_thesis + "\n\n")
+    
+    master_thesis=f'**MPhil thesis**: [Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model](https://lbezone.hkust.edu.hk/bib/991012656469603412)'
+    md_file.write(master_thesis + "\n\n")

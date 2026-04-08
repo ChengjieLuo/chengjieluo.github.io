@@ -53,3 +53,7 @@ Totally 22 papers, including 10 (co-)first author papers.
 
 22. **Chengjie Luo**, and Liesbeth MC Janssen. [Generalized mode-coupling theory of the glass transition. II. Analytical scaling laws](https://doi.org/10.1063/5.0026979). *The Journal of Chemical Physics* 153,  (2020).
 
+**PhD thesis**: [A First-Principles Theory of the Complex Dynamics of Glass-Forming Liquids: A Generalized Mode-Coupling Theory](https://research.tue.nl/en/publications/a-first-principles-theory-of-the-complex-dynamics-of-glass-formin/)
+
+**MPhil thesis**: [Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model](https://lbezone.hkust.edu.hk/bib/991012656469603412)
+
