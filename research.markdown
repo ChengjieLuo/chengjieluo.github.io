@@ -11,16 +11,28 @@ nav_order: 2
 Liquid–liquid phase separation is a key mechanism driving the formation of biomolecular condensates in living cells. The formation, structure, and dynamics of these condensates are governed by a rich interplay of molecular interactions, chemical reactions, and mechanical properties. Our research aims to uncover the universal physical principles underlying phase separation and to develop strategies for controlling the spatiotemporal organization of molecules — both inside cells and in chemical engineering applications.
 
 
+<div style="text-align: center; margin: 20px 0;">
+  <img src="{{ '/assets/images/phase_separation_schematic.png' | relative_url }}" alt="Phase separation" style="max-width: 90%;">
+</div>
+
 <details>
 <summary><h3 style="display: inline;">Size control of condensates via long-range interactions</h3></summary>
 
 Condensation is typically driven by short-range attractions, but many biomolecules carry charges that also mediate long-range repulsion. What happens when these two competing interactions coexist?
 
-Using molecular dynamics simulations and an equilibrium field theory, we show that the interplay of short-range attraction and long-range repulsion can arrest coarsening, leading to many droplets of well-defined, equal size at equilibrium. Crucially, this size control is governed by the <em>charge asymmetry</em> between molecular constituents, while the strength of the short-range attractions has a weak influence.
+Using molecular dynamics simulations and an equilibrium field theory, we show that the interplay of short-range attraction and long-range repulsion can arrest coarsening, leading to many droplets of well-defined, equal size at equilibrium. Crucially, this size control is governed by the <em>charge asymmetry</em> between molecular constituents, while the strength of the short-range attractions has a weak influence.      
+
+
+
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="{{ '/assets/images/charge_asymmetry_schematic.png' | relative_url }}" alt="Charge asymmetry schematic" style="max-width: 70%;">
 </div>
+
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1021/acsmacrolett.5c00342" style="color: #808080;">Theory of condensate size control by molecular charge asymmetry, ACS Macro Letters 14, 1484--1491 (2025)</a></li>
+  <li><a href="https://doi.org/10.1103/PhysRevX.14.021009" style="color: #808080;">Nonlocal elasticity yields equilibrium patterns in phase separating systems, Physical Review X 14, 021009 (2024)</a></li>
+</ul>
 
 </details>
 
@@ -48,6 +60,11 @@ The resulting phase diagrams are remarkably complex — conventional stability a
 </div>
 
 This complexity implies an enormous parameter regime with multiple locally stable states. In biological cells, such multistability could enable control over the formation and dissolution of condensates. More broadly, higher-order interactions offer a largely unexplored avenue for engineering multicomponent phase separation.
+
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1103/PhysRevResearch.6.033002" style="color: #808080;">Beyond pairwise: Higher-order physical interactions affect phase separation in multicomponent liquids, Physical Review Research 6, 033002 (2024)</a></li>
+  <li><a href="https://doi.org/10.1103/zcvb-9t4b" style="color: #808080;">Scaling laws for phase coexistence in multicomponent mixtures, Physical Review Research 7, 043008 (2025)</a></li>
+</ul>
 
 </details>
 
@@ -107,6 +124,11 @@ Weak interactions preserve the spiral-wave morphology but modify their character
 
 These results reveal that even modest physical interactions can qualitatively alter the outcome of reaction-diffusion dynamics, pointing to a rich and largely uncharted interplay between thermodynamics and non-equilibrium chemistry.
 
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1103/PhysRevE.108.034206" style="color: #808080;">Influence of physical interactions on spatiotemporal patterns, Physical Review E 108, 034206 (2023)</a></li>
+  <li><a href="https://doi.org/10.1098/rsif.2023.0244" style="color: #808080;">Physical interactions in non-ideal fluids promote Turing patterns, Journal of the Royal Society Interface 20,  (2023)</a></li>
+</ul>
+
 </details>
 
 
@@ -133,6 +155,10 @@ Moreover, knowing that each pair of species with short-range repulsion and long-
   <img src="{{ '/assets/images/snapshot_3phases.png' | relative_url }}" alt="Designed three-phase coexistence" style="max-width: 80%;">
 </div>
 
+
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1103/7n1c-2m5g" style="color: #808080;">Self-propulsion via nontransitive phase coexistence in chemically active mixtures, Physical Review Letters 135, 268301 (2025)</a></li>
+</ul>
 </details>
 
 ---
@@ -143,19 +169,26 @@ Almost any material can be cooled or compressed from a liquid to a glass state. 
 
 We tackle this challenge by developing first-principles theories that systematically connect the static structure of a material to its dynamical relaxation, providing new insights into the microscopic origin of glassy slowdown.
 
+<div style="text-align: center; margin: 20px 0;">
+  <img src="{{ '/assets/images/GMCT.png' | relative_url }}" alt="GMCT hierarchy schematic" style="max-width: 80%;">
+</div>
+
 <details>
 <summary><h3 style="display: inline;">Generalized mode-coupling theory</h3></summary>
 
 Standard mode-coupling theory (MCT) relates the slow dynamics of supercooled liquids to the static pair structure, but its quantitative predictions are often inaccurate. To go beyond MCT, we have developed a generalized mode-coupling theory (GMCT) that derives, from first principles, the coupled dynamical equations for many-body density correlation functions. These equations form an infinite hierarchy, where each level feeds back into the others through memory kernels. In principle, the theory becomes exact as the closure level approaches infinity; in practice, we truncate at a finite level and systematically improve the predictions by increasing it.
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="{{ '/assets/images/GMCT.png' | relative_url }}" alt="GMCT hierarchy schematic" style="max-width: 80%;">
+  <img src="{{ '/assets/images/GMCT_details_schematic.png' | relative_url }}" alt="GMCT hierarchy schematic" style="max-width: 80%;">
 </div>
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1063/5.0026969" style="color: #808080;">Generalized mode-coupling theory of the glass transition. I. Numerical results for Percus--Yevick hard spheres, The Journal of Chemical Physics 153, 214507 (2020)</a></li>
+</ul>
 
 </details>
 
 <details>
-<summary><h3 style="display: inline;">Applying GMCT to glass-forming liquids</h3></summary>
+<summary><h3 style="display: inline;">Applying GMCT to glass-forming materials</h3></summary>
 
 We have applied GMCT to a wide range of glass-forming models, and in every case the predictions improve systematically with increasing closure level.
 
@@ -182,8 +215,12 @@ We have further proved that, under a mean-field-like closure, GMCT preserves the
 <div style="text-align: center; margin: 20px 0;">
   <img src="{{ '/assets/images/scaling_GMCT.png' | relative_url }}" alt="GMCT scaling laws" style="max-width: 90%;">
 </div>
-
-
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1140/epje/s10189-021-00095-w" style="color: #808080;">Multi-component generalized mode-coupling theory: predicting dynamics from structure in glassy mixtures, The European Physical Journal E 44, 91 (2021)</a></li>
+  <li><a href="https://doi.org/10.1039/D1SM00712B " style="color: #808080;">Glassy dynamics of sticky hard spheres beyond the mode-coupling regime, Soft Matter 17, 7645--7661 (2021)</a></li>
+    <li><a href="https://doi.org/10.1103/PhysRevE.104.065302" style="color: #808080;">Generalized mode-coupling theory for mixtures of Brownian particles, Physical Review E 104, 065302 (2021)</a></li>
+    <li><a href="https://doi.org/10.1063/5.0026979" style="color: #808080;">Generalized mode-coupling theory of the glass transition. II. Analytical scaling laws, The Journal of Chemical Physics 153, 214506 (2020)</a></li>
+</ul>
 </details>
 
 
@@ -199,4 +236,8 @@ We further extend our theory to include the contribution of higher-order static 
   <img src="{{ '/assets/images/silica.png' | relative_url }}" alt="Silica glass transition diagram" style="max-width: 80%;">
 </div>
 
+<ul style="color: #808080; font-size: 0.9em;">
+  <li><a href="https://doi.org/10.1093/pnasnexus/pgad184" style="color: #808080;">Emergent structural correlations in dense liquids, PNAS nexus 2, pgad184 (2023)</a></li>
+    <li><a href="https://doi.org/10.1103/PhysRevLett.129.145501" style="color: #808080;">Many-body correlations are non-negligible in both fragile and strong glassformers, Physical Review Letters 129, 145501 (2022)</a></li>
+</ul>
 </details>

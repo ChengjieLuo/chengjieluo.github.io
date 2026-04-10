@@ -197,6 +197,8 @@ with open('publication.markdown', 'w') as md_file:
 
         line = f'{i}. **{title}** <br> {authors} <br> <a href="https://doi.org/{doi}" style="color: #808080;">{journal} {volume}, {pages} ({year})</a>'
 
+        print(f'<a href="https://doi.org/{doi}" style="color: #808080;">{title}, {journal} {volume}, {pages} ({year})</a>')
+
          # Add highlights (e.g., cover links)
         if entry_id in highlights:
             for h in highlights[entry_id]:
@@ -206,6 +208,8 @@ with open('publication.markdown', 'w') as md_file:
         # print(journal)
 
         line += "\n\n"
+
+        # print(line)
 
         md_file.write(line)
 

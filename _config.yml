@@ -22,7 +22,7 @@ title: Chengjie Luo
 # email: chengjie.luo@ds.mpg.de
 description: >- # this means to ignore newlines until "baseurl:"
   Stay at interfaces: 
-  Liquid ↔ Glass, Ordered ↔ Disordered, Human ↔ AI.
+  Liquid ↔ Glass, Ordered ↔ Disordered, Human ↔ AI
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "chengjieluo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

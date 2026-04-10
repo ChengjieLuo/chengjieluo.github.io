@@ -9,7 +9,7 @@ nav_order: 3
 
 **2022 – now:** Postdoc Researcher   
 Max Planck Institute for Dynamics and Self-Organization (MPI-DS), Germany     
-Supervisor: *Dr. David Zwicker*
+Supervisor: <a href="https://www.zwickergroup.org/david-zwicker" style="color: #1a1a1a;">Dr. David Zwicker</a>
 
 ---
 
@@ -17,11 +17,12 @@ Supervisor: *Dr. David Zwicker*
 
 **2018 – 2023:** PhD in Applied Physics (Cum Laude)  
 Eindhoven University of Technology (TU/e), Netherlands  
-Supervisors: *Prof. Liesbeth M. C. Janssen, Prof. Cornelis Storm*
+Supervisors: <a href="https://tps.phys.tue.nl/janssen/" style="color: #1a1a1a;">Prof. Liesbeth M. C. Janssen</a>, 
+<a href="https://www.tue.nl/en/research/researchers/cornelis-storm" style="color: #1a1a1a;">Prof. Cornelis Storm</a>
 
 **2016 – 2018:** MPhil in Physics  
 The Hong Kong University of Science and Technology (HKUST), Hong Kong, China  
-Supervisor: *Prof. Penger Tong*
+Supervisor: <a href="https://physics.hkust.edu.hk/people/penger-tong-tongpenger" style="color: #1a1a1a;">Prof. Penger Tong</a>
 
 **2012 – 2016:** BSc in Physics  
 Nanjing University (NJU), China  
