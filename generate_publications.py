@@ -211,6 +211,8 @@ with open('publication.markdown', 'w') as md_file:
 
         # print(line)
 
+        if (journal=='arXiv'):
+            line = f'{i}. **{title}** <br> {authors} <br> <a href="{entry.get("url", "")}" style="color: #808080;">arXiv:{entry.get("eprint", "")} ({year})</a>\n\n'
         md_file.write(line)
 
         #### write thesis
