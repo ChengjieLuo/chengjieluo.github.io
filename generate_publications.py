@@ -44,7 +44,7 @@ def latex_to_unicode(text):
     return text
 
 # Load the .bib file
-with open('/Users/chengjie/Documents/Goettingen/projects/homepage/chengjieluo.github.io/_bibliography/references.bib') as bibtex_file:
+with open('./_bibliography/references.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 # Sort entries by year (descending)
@@ -197,7 +197,7 @@ with open('publication.markdown', 'w') as md_file:
 
         line = f'{i}. **{title}** <br> {authors} <br> <a href="https://doi.org/{doi}" style="color: #808080;">{journal} {volume}, {pages} ({year})</a>'
 
-        print(f'<a href="https://doi.org/{doi}" style="color: #808080;">{title}, {journal} {volume}, {pages} ({year})</a>')
+        # print(f'<a href="https://doi.org/{doi}" style="color: #808080;">{title}, {journal} {volume}, {pages} ({year})</a>')
 
          # Add highlights (e.g., cover links)
         if entry_id in highlights:
@@ -223,3 +223,5 @@ with open('publication.markdown', 'w') as md_file:
     # master_thesis=f'**MPhil thesis**: [Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model](https://lbezone.hkust.edu.hk/bib/991012656469603412)'
     master_thesis=f'**MPhil thesis**: <a href="https://lbezone.hkust.edu.hk/bib/991012656469603412" style="color: #808080;">Analysis of the potential landscapes of colloidal diffusion systems using the Markov state model</a>'
     md_file.write(master_thesis + "\n\n")
+
+    print("finished generating publication.markdown")
